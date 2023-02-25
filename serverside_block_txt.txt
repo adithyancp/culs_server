@@ -1,0 +1,106 @@
+1.what are advantages of janet server language
+
+Janet is a dynamic, functional programming language that was designed with a focus on simplicity, performance, and ease of use. Janet also has a built-in server, which allows developers to easily build scalable, high-performance network applications. Some advantages of using Janet for server-side development include:
+
+High Performance: Janet's focus on performance means that it can handle high levels of traffic and processing efficiently. The built-in server provides low-latency responses, making it ideal for real-time applications.
+
+Easy to Learn: Janet's syntax is easy to understand, and its functional programming style makes it simple to reason about code. This makes it an ideal choice for developers who are new to functional programming or who want to learn a new language quickly.
+
+Flexible: Janet is a flexible language that can be used for a wide range of applications, from web development to data analysis. It is also easy to integrate with other programming languages and systems.
+
+Cross-platform Compatibility: Janet is designed to be cross-platform, meaning that it can run on any operating system, including Linux, macOS, and Windows.
+
+Active Community: Janet has a growing community of developers who are actively contributing to its development. This means that there is a wealth of resources available for developers who want to learn more about the language or need help with a specific issue.
+
+
+
+2.how to write code to access database in php
+
+
+Connect to the Database: First, you need to create a new PDO object to establish a connection to the database server. Here's an example:
+
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "database_name";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+
+
+2.Execute a Query: Once you have established a connection, you can execute SQL queries using the query() or prepare() methods of the PDO object. Here's an example:
+
+
+// select all records from a table
+$stmt = $conn->query("SELECT * FROM my_table");
+
+// iterate through the result set
+while ($row = $stmt->fetch()) {
+  echo $row['column1'] . " " . $row['column2'] . "<br>";
+}
+
+
+3.Close the Connection: After you have finished executing queries, you should close the database connection to free up resources. Here's an example:
+
+$conn = null; // close the connection
+
+
+
+
+
+
+3.how to establish forms in server side?
+
+To establish forms on the server-side, you will need to use a server-side programming language like PHP. Here are the general steps for setting up a form on the server-side:
+
+Create the HTML Form: First, you need to create an HTML form that will collect data from the user. This involves using the <form> tag to define the form and various input elements (such as <input>, <textarea>, and <select>) to collect data. For example:
+
+<form action="process_form.php" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message"></textarea><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+Process the Form Data: Once the user submits the form, the data needs to be sent to the server for processing. This involves setting the action attribute of the form to a server-side script that will handle the data. For example:
+
+<form action="process_form.php" method="post">
+  <!-- form fields here -->
+</form>
+
+In this example, the process_form.php script will handle the data when the form is submitted.
+
+Retrieve and Validate the Form Data: In the server-side script, you will need to retrieve the data from the form using the $_POST variable. For example:
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+
+You should also validate the data to ensure that it is in the correct format and meets any requirements you have (such as checking for required fields or ensuring that email addresses are valid).
+
+Process the Form Data: Finally, you can process the form data as needed. This might involve inserting it into a database, sending an email, or performing some other action based on the user's input.
+These are the general steps for establishing forms on the server-side. The specifics will depend on your programming language, database, and other requirements.
+
+
+
+
+
+
+
+
+
+
+
